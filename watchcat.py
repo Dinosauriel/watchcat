@@ -1,8 +1,12 @@
 
 import subprocess
 import re
+import os.path
 
-servers = open("./servers.txt")
+
+root = os.path.dirname(__file__)
+
+servers = open(os.path.join(root, "servers.txt"))
 
 screens_active = subprocess.run(["screen", "-ls"], stdout=subprocess.PIPE).stdout.decode("utf-8")
 
@@ -18,6 +22,6 @@ for server in servers:
 		continue
 
 	print("server " + server_name + " is not running. starting...")
-	subprocess.run(["sh", "../start-" + server_name + ".sh"], stdout=subprocess.DEVNULL)
+	subprocess.run(["sh", os.path.join(root, "../start-" + server_name + ".sh")], stdout=subprocess.DEVNULL)
 
 servers.close()
