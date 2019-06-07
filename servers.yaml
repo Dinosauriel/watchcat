@@ -1,0 +1,6 @@
+- name: "minecraft_2"
+  file: "/home/public/start-minecraft_2.sh"
+  enabled: true
+- name: "minecraft_1"
+  file: "/home/public/start-minecraft_1.sh"
+  enabled: false 
