@@ -24,7 +24,7 @@ i = -1
 for server in servers:
 	i += 1
 	#print(server)
-	
+
 	if not server["enabled"]:
 		continue;
 
@@ -41,11 +41,11 @@ for server in servers:
 		continue
 
 
-	server_file = server["file"]
-	if server_file is None:
+	server_start_file = server["start"]
+	if server_start_file is None:
 		print("please provide a start file for the server " + server_name)
 		continue
 
 
-	print("server " + server_name + " is not running. running file: " + server_file)
-	subprocess.run(["sh", server_file], stdout=subprocess.DEVNULL)
+	print("server " + server_name + " is not running. running file: " + server_start_file)
+	subprocess.run(["sh", server_start_file], stdout=subprocess.DEVNULL)

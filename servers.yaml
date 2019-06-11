@@ -1,6 +1,10 @@
 - name: "minecraft_2"
-  file: "/home/public/start-minecraft_2.sh"
+  start: "/home/public/start-minecraft_2.sh"
+  stop: "path/to/stop"
+  restart: "path/to/restart"
   enabled: true
 - name: "minecraft_1"
-  file: "/home/public/start-minecraft_1.sh"
+  start: "/home/public/start-minecraft_1.sh"
+  stop: "path/to/stop"
+  restart: "path/to/restart"
   enabled: false 
